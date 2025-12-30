@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 13:59:30 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/19 14:12:00 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/12/30 18:16:00 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 class Cat : public Animal {
 
 	public:
-	Cat( std::string type );
-	Cat( const Cat& );
-	Cat& operator = ( const Cat& );
-	void makeSound();
+	Cat();
+	Cat(const Cat&);
+	Cat& operator = (const Cat&);
+	virtual ~Cat();
+
+	virtual void makeSound() const;
 };
 
 #endif

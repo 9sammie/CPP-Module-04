@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 13:50:50 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/19 13:58:39 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/12/30 17:00:14 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Animal::Animal( std::string type ): _type(type) {
 
-	std::cout << "Animal default constructor called" << std::endl;
+	std::cout << BLUE << "Animal default constructor called" << STD << std::endl;
 }
 
 Animal::Animal( const Animal& other ) {
 
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << BLUE << "Animal copy constructor called" << STD << std::endl;
 	*this = other;
 }
 
 Animal& Animal::operator = ( const Animal& other ) {
 
-	std::cout << "Animal copy assignment constructor called" << std::endl;
+	std::cout << BLUE << "Animal copy assignment constructor called" << STD << std::endl;
 	if (this != &other)
 		this->_type = other._type;
 	return *this;
@@ -33,10 +33,15 @@ Animal& Animal::operator = ( const Animal& other ) {
 
 Animal::~Animal () {
 
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << BLUE << "Animal destructor called" << STD << std::endl;
 }
 
-void Animal::makeSound () {
+std::string Animal::getType() const{
 
-	std::cout << "Mooooooo" << std::endl;
+	return _type;
+}
+
+void Animal::makeSound () const{
+
+	std::cout << BLUE << "Mooooooo" << STD << std::endl;
 }

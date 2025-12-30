@@ -6,37 +6,39 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 14:13:08 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/19 14:14:51 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/12/30 18:16:08 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Cat.hpp"
 
-Cat::Cat( std::string type ): _type(type) {
+Cat::Cat(): Animal("Cat") {
 
-	std::cout << "Cat default constructor called" << std::endl;
+	std::cout << GREEN << "Cat default constructor called" << STD << std::endl;
 }
 
-Cat::Cat( const Cat& other ) {
+Cat::Cat(const Cat& other): Animal(other) {
 
-	std::cout << "Cat copy constructor called" << std::endl;
+	std::cout << GREEN << "Cat copy constructor called" << STD << std::endl;
 	*this = other;
 }
 
-Cat& Cat::operator = ( const Cat& other ) {
+// Cpy all the "other" attribut at once line 32.
+Cat& Cat::operator = (const Cat& other) {
 
-	std::cout << "Cat copy assignment constructor called" << std::endl;
+	std::cout << GREEN << "Cat copy assignment constructor called" << STD << std::endl;
 	if (this != &other)
-		this->_type = other._type;
+		Animal::operator=(other);
 	return *this;
 }
 
 Cat::~Cat () {
 
-	std::cout << "Cat destructor called" << std::endl;
+	std::cout << GREEN << "Cat destructor called" << STD << std::endl;
 }
 
-void Cat::makeSound () {
+void Cat::makeSound () const {
 
-	std::cout << "Mooooooo" << std::endl;
+	std::cout << GREEN << "MiAouUuUuuuu" << STD << std::endl;
 }

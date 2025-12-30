@@ -6,19 +6,29 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:55:24 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/19 13:51:55 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/12/30 18:23:15 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-# include <iostream>
-# include <string>
+#define STD			"\033[0m"
+#define BLUE		"\033[38;5;44m\033[48;5;159m"
+// #define BLUEBG		"\033[48;5;193m"
+#define GREEN		"\033[38;5;34m\033[48;5;193m"
+// #define GREENBG		"\033[48;5;193m"
+#define PINK		"\033[38;5;199m\033[48;5;225m"
+// #define PINKBG		"\033[48;5;225m"
+#define GREYBGBOLD	"\033[48;5;237m\033[1m"
+// #define GREYBG		"\033[48;5;237m"
+
+#include <iostream>
+#include <string>
 
 class Animal {
 
-	private:
+	protected:
 	std::string _type;
 
 	public:
@@ -27,7 +37,8 @@ class Animal {
 	Animal& operator = ( const Animal& );
 	virtual ~Animal();
 	
-	virtual void makeSound();
+	std::string getType() const;
+	virtual void makeSound() const;
 
 };
 
