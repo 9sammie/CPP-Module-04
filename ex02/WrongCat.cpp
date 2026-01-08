@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 18:20:08 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/30 18:22:33 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 14:20:11 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ WrongCat::WrongCat(const WrongCat& other): WrongAnimal(other) {
 	*this = other;
 }
 
-// Cpy all the "other" attribut at once line 32.
+// Copy all the "other" attribut at once line 32.
 WrongCat& WrongCat::operator = (const WrongCat& other) {
 
 	std::cout << GREEN << "WrongCat copy assignment constructor called" << STD << std::endl;

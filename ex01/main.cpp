@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:50:06 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/30 21:56:43 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2026/01/08 17:49:41 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,41 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+#define NUMBER_OF_ANIMALS 10
+
 int main() {
 
 	std::cout << GREYBGBOLD << "~~~ Subject test ~~~" << STD << std::endl << std::endl;
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;
-	delete i;
+	int i = 0;
+	const Animal *animalTab[NUMBER_OF_ANIMALS];
 
-	std::cout << std::endl << std::endl << GREYBGBOLD << "~~~ WrongAnimal test ~~~" << STD << std::endl << std::endl;
-	WrongAnimal wrongMeta;
-	WrongAnimal wrongI = wrongMeta;
-	wrongMeta.setBrainIdea("milk");
-	wrongI.setBrainIdea("water");
-	std::cout << std::endl;
-	std::cout << BLUE << "wrongMeta idea: " << wrongMeta.getBrainIdea() << " " << STD << std::endl;
-	std::cout << GREEN << "wrongI idea: " << wrongI.getBrainIdea() << " " << STD << std::endl;
+	while (i < NUMBER_OF_ANIMALS)
+	{
+		if (i%2 == 0)
+			animalTab[i] = new Dog();
+		else
+			animalTab[i] = new Cat();
+		i++;
+	}
+	i = 0;
+	while (i < NUMBER_OF_ANIMALS)
+	{
+		delete animalTab[i];
+		i++;
+	}
 
+	// std::cout << std::endl << std::endl << GREYBGBOLD << "~~~ WrongAnimal test ~~~" << STD << std::endl << std::endl;
+	// WrongAnimal wrongAnimal1;
+	// WrongAnimal wrongAnimal2(wrongAnimal1);
+	// WrongAnimal wrongAnimal3 = wrongAnimal2;
+	// wrongAnimal1.setBrainIdea("milk");
+	// wrongAnimal2.setBrainIdea("water");
+	// wrongAnimal3.setBrainIdea("soda");
+	// std::cout << std::endl;
+	// std::cout << BLUE << "wrongAnimal1 idea: " << wrongAnimal1.getBrainIdea() << " " << STD << std::endl;
+	// std::cout << BLUE << "wrongAnimal2 idea: " << wrongAnimal2.getBrainIdea() << " " << STD << std::endl;
+	// std::cout << BLUE << "wrongAnimal3 idea: " << wrongAnimal3.getBrainIdea() << " " << STD << std::endl;
+	
 	std::cout << std::endl << std::endl << GREYBGBOLD << "~~~ All cat constructor test ~~~" << STD << std::endl << std::endl;
 	Cat Cat1;
 	Cat Cat2(Cat1);
