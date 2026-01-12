@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                        :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 17:55:24 by maballet          #+#    #+#             */
-/*   Updated: 2026/01/08 19:28:02 by maballet         ###   ########lyon.fr   */
+/*   Created: 2026/01/08 19:20:49 by maballet          #+#    #+#             */
+/*   Updated: 2026/01/08 19:29:45 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#define STD			"\033[0m"
-#define BLUE		"\033[38;5;44m\033[48;5;159m"
-#define GREEN		"\033[38;5;34m\033[48;5;193m"
-#define PINK		"\033[38;5;199m\033[48;5;225m"
-#define GREYBGBOLD	"\033[48;5;237m\033[1m"
+#ifndef ICE_HPP
+#define ICE_HPP
 
 #include <iostream>
 #include <string>
-#include "Brain.hpp"
+#include "ICharacter.hpp"
 
-class AAnimal {
+class Ice {
 
-	protected:
+	private:
+
 	std::string _type;
-	Brain* _brain;
-
+	
 	public:
-	AAnimal(std::string name = "");
-	AAnimal(const AAnimal&);
-	AAnimal& operator = (const AAnimal&);
-	virtual ~AAnimal();
+
+	Ice(std::string const & type);
+	Ice(const Ice&);
+	Ice& operator = (const Ice&);
+	~Ice();
 };
+
+#endif

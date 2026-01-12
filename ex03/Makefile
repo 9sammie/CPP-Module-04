@@ -2,7 +2,7 @@
 ###									PROGRAM ###
 ################################################################################
 
-NAME					=		YappingAnimals
+NAME					=		interface
 
 ################################################################################
 ###									COMPILE ###
@@ -26,11 +26,11 @@ CFLAGS					=		-std=c++98 -Wall -Wextra -Werror
 ###									FILES	 ###
 ################################################################################
 
-HEADERS					=		Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp\
-								WrongCat.hpp
+HEADERS					=		AAnimal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp\
+								WrongCat.hpp Brain.hpp
 
-SRC						=		main.cpp Animal.cpp Cat.cpp Dog.cpp\
-								WrongAnimal.cpp WrongCat.cpp
+SRC						=		main.cpp AAnimal.cpp Cat.cpp Dog.cpp\
+								WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJ						=		$(SRC:%.cpp=$(OBJ_DIR)/%.o)
 

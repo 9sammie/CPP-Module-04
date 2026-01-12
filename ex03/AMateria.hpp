@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                        :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 17:55:24 by maballet          #+#    #+#             */
-/*   Updated: 2026/01/08 19:28:02 by maballet         ###   ########lyon.fr   */
+/*   Created: 2026/01/08 19:04:29 by maballet          #+#    #+#             */
+/*   Updated: 2026/01/08 19:27:47 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#define STD			"\033[0m"
-#define BLUE		"\033[38;5;44m\033[48;5;159m"
-#define GREEN		"\033[38;5;34m\033[48;5;193m"
-#define PINK		"\033[38;5;199m\033[48;5;225m"
-#define GREYBGBOLD	"\033[48;5;237m\033[1m"
-
 #include <iostream>
 #include <string>
-#include "Brain.hpp"
+#include "ICharacter.hpp"
 
-class AAnimal {
+class AMateria {
 
 	protected:
-	std::string _type;
-	Brain* _brain;
-
+	
 	public:
-	AAnimal(std::string name = "");
-	AAnimal(const AAnimal&);
-	AAnimal& operator = (const AAnimal&);
-	virtual ~AAnimal();
+
+	AMateria(std::string const & type);
+	AMateria(const AMateria&);
+	AMateria& operator = (const AMateria&);
+	virtual ~AMateria();
+	std::string const & getType() const; //Returns the materia type
+	virtual AMateria* clone() const = 0;
+	virtual void use(ICharacter& target);
 };
