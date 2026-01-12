@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:55:24 by maballet          #+#    #+#             */
-/*   Updated: 2026/01/06 14:27:15 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 19:21:51 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ class Animal {
 	std::string _type;
 
 	public:
-	Animal( std::string name = "" );
-	Animal( const Animal& );
-	Animal& operator = ( const Animal& );
+	Animal();
+	Animal(std::string name);
+	Animal(const Animal&);
+	Animal& operator = (const Animal&);
 	virtual ~Animal();
 	
 	std::string getType() const;

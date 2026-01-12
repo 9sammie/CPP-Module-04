@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:55:24 by maballet          #+#    #+#             */
-/*   Updated: 2026/01/08 19:28:02 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 19:27:37 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ class AAnimal {
 	Brain* _brain;
 
 	public:
-	AAnimal(std::string name = "");
+	AAnimal();
+	AAnimal(std::string name);
 	AAnimal(const AAnimal&);
 	AAnimal& operator = (const AAnimal&);
 	virtual ~AAnimal();

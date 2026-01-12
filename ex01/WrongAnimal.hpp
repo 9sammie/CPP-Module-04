@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 18:20:06 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/30 21:32:01 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 19:26:18 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ class WrongAnimal {
 	Brain* _brain;
 
 	public:
-	WrongAnimal( std::string name = "" );
-	WrongAnimal( const WrongAnimal& );
-	WrongAnimal& operator = ( const WrongAnimal& );
+	WrongAnimal();
+	WrongAnimal(std::string name);
+	WrongAnimal(const WrongAnimal&);
+	WrongAnimal& operator = (const WrongAnimal&);
 	virtual ~WrongAnimal();
 	
 	void setBrainIdea(std::string idea);

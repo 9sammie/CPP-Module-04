@@ -6,15 +6,20 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 13:50:50 by maballet          #+#    #+#             */
-/*   Updated: 2026/01/06 14:18:42 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 19:27:51 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 
+AAnimal::AAnimal() {
+
+	std::cout << BLUE << "Animal default constructor called" << STD << std::endl;
+}
+
 AAnimal::AAnimal( std::string type ): _type(type), _brain(new Brain()) {
 
-	std::cout << BLUE << "AAnimal default constructor called" << STD << std::endl;
+	std::cout << BLUE << "AAnimal default argument constructor called" << STD << std::endl;
 }
 
 // deep copy with new Brain de *other._brain.
